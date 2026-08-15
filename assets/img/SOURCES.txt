@@ -1,0 +1,29 @@
+Fontes das imagens (assets/img/)
+================================
+Todas as fotos são stock gratuitas (Unsplash License / Pexels License — uso comercial permitido, sem atribuição obrigatória).
+Originais baixados em 2400px de largura e convertidos para WebP q85 em 1600px e 800px.
+
+hero-1600.webp / hero-800.webp
+  Conteúdo: massagem com pedras quentes nas costas, spa em tons quentes.
+  Fonte: Unsplash — https://images.unsplash.com/photo-1696841212541-449ca29397cc?q=90&w=2400&auto=format&fit=crop
+  Página: https://unsplash.com/s/photos/hot-stone-massage (foto photo-1696841212541-449ca29397cc)
+
+servico-remodelacao-1600.webp / servico-remodelacao-800.webp
+  Conteúdo: massagem modeladora no abdômen, mãos trabalhando o corpo, toalhas brancas, tons quentes.
+  Fonte: Pexels — https://images.pexels.com/photos/29821661/pexels-photo-29821661.jpeg?auto=compress&cs=tinysrgb&w=2400
+  Página: https://www.pexels.com/photo/29821661/
+
+servico-drenagem-1600.webp / servico-drenagem-800.webp
+  Conteúdo: massagem suave nas pernas/coxa com óleo, movimentos de drenagem, tons quentes.
+  Fonte: Unsplash — https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?q=90&w=2400&auto=format&fit=crop
+  Página: https://unsplash.com/s/photos/lymphatic-drainage-massage (foto photo-1741522509438-a120c0bb5e88)
+
+servico-pos-operatorio-1600.webp / servico-pos-operatorio-800.webp
+  Conteúdo: toque terapêutico delicado na região lombar/quadril, ambiente clínico-acolhedor claro.
+  Fonte: Unsplash — https://images.unsplash.com/photo-1668422550557-f096364b72b4?q=90&w=2400&auto=format&fit=crop
+  Página: https://unsplash.com/s/photos/lymphatic-drainage-massage (foto photo-1668422550557-f096364b72b4)
+
+servico-flacidez-1600.webp / servico-flacidez-800.webp
+  Conteúdo: aplicação de óleo/creme nas costas, pele bonita, ambiente spa com toalhas brancas.
+  Fonte: Unsplash — https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=90&w=2400&auto=format&fit=crop
+  Página: https://unsplash.com/s/photos/stomach-massage (foto photo-1544161515-4ab6ce6db874)

@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Layout — container, bandas de seção, ritmo editorial
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--section-gap);
+  position: relative;
+}
+
+.section--blush {
+  background: var(--surface-blush);
+}
+
+/* Fundos em blocos de cor sólida — a progressão cromática segue as camadas
+   da logo em registro pastel (tints suavizados de #E0000A → #E33D4B →
+   #EB839E), clareando até o campo claro do CTA. Texto sempre espresso;
+   o contraste vem do corte seco entre as seções. */
+.section--deep {
+  background: #DD8285; /* pastel da camada #E0000A — espresso 5.0:1 */
+}
+
+.section--red {
+  background: #ECAEB1; /* pastel da camada #E33D4B — espresso 7.4:1 */
+}
+
+/* Sobre os tons rosados o eyebrow vermelho perde contraste — vai a espresso */
+.section--deep .eyebrow,
+.section--red .eyebrow {
+  color: var(--color-deep-espresso);
+}
+
+/* Section header block (Design.md) */
+.section-header {
+  max-width: 720px;
+  margin-bottom: var(--spacing-56);
+}
+
+.section-header .eyebrow {
+  display: block;
+  margin-bottom: var(--spacing-14);
+}
+
+.section-header h2 {
+  font-family: var(--font-playfair);
+  font-size: var(--text-heading-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-heading-lg);
+  letter-spacing: var(--tracking-heading-lg);
+  color: var(--color-deep-espresso);
+  text-wrap: balance;
+}
+
+.section-header p {
+  margin-top: var(--spacing-20);
+  max-width: 58ch;
+}
+
+/* Grids utilitários */
+.grid-services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-24);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .grid-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .grid-services {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .split--media-first .split__media {
+    order: -1;
+  }
+}

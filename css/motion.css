@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Motion — estados iniciais de reveal e prefers-reduced-motion
+   (as animações em si rodam em GSAP; aqui ficam só os fallbacks CSS)
+   ========================================================================== */
+
+/* Elementos com reveal são preparados via JS (gsap.set) para não esconder
+   conteúdo quando JS falha. Estas classes são o fallback visual mínimo. */
+
+[data-reveal] {
+  opacity: 1;
+}
+
+.js [data-reveal] {
+  opacity: 0;
+}
+
+/* ---------- Reduced motion: tudo visível e estático ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+  }
+
+  .intro {
+    display: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .noise-overlay {
+    display: none;
+  }
+
+  .card,
+  .btn,
+  .text-link,
+  .menu-toggle,
+  .menu-overlay__link,
+  .hero__cta {
+    transition: none;
+  }
+
+  .card:hover,
+  .btn--primary:hover,
+  .btn--conversion:hover,
+  .hero__cta:hover {
+    transform: none;
+  }
+
+  /* Hero: conteúdo entra sem animação; lótus já nasce formada */
+  .hero__eyebrow,
+  .hero__sub,
+  .hero__cta {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .hero__title .w > span {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .lotus-mark img,
+  .contact__lotus img {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

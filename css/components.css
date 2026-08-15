@@ -1,0 +1,594 @@
+/* ==========================================================================
+   Components — botões pill, badges, cards, header, menu overlay, cursor
+   ========================================================================== */
+
+/* ---------- Botões ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-10);
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-poppins);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out-soft),
+              transform var(--duration-fast) var(--ease-out-soft),
+              box-shadow var(--duration-fast) var(--ease-out-soft);
+  will-change: transform;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background: var(--color-lotus-red);
+  color: var(--color-lotus-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-lotus-deep);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.btn--conversion {
+  background: var(--color-sage-green);
+  color: var(--color-lotus-white);
+}
+
+.btn--conversion:hover {
+  background: var(--color-sage-deep);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.btn--conversion .btn__icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* CTA sobre fundo rosa (Serviços): pill branco puro, texto espresso.
+   O verde Sage fica reservado a fundos claros (Contato). */
+.btn--light {
+  background: #FFFFFF;
+  color: var(--color-deep-espresso);
+}
+
+.btn--light:hover {
+  background: var(--color-lotus-blush);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.btn--light .btn__icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* Text-link (ação secundária dominante) */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-family: var(--font-lato);
+  font-size: var(--text-body);
+  color: var(--color-lotus-red);
+  line-height: 1.4;
+}
+
+.text-link .text-link__arrow {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-out-soft);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.text-link:hover .text-link__arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- Badge ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-poppins);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.45;
+}
+
+.badge--benefit {
+  border: 1px solid var(--color-sage-green);
+  color: var(--color-sage-green);
+  background: transparent;
+}
+
+.badge--credential {
+  background: var(--surface-blush);
+  color: var(--color-deep-espresso);
+}
+
+/* Sobre fundos vermelhos (Localização): pill branco cheio, texto espresso */
+.badge--light {
+  background: var(--color-lotus-white);
+  color: var(--color-deep-espresso);
+}
+
+/* ---------- Feature Card ---------- */
+
+.card {
+  background: var(--surface-blush);
+  color: var(--color-deep-espresso);
+  border-radius: var(--radius-cards);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-14);
+  transition: transform var(--duration-med) var(--ease-out-soft),
+              box-shadow var(--duration-med) var(--ease-out-soft);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Cards de serviço em bege quente sobre o rosa pastel da seção —
+   divisão clara entre as superfícies, texto sempre espresso (11:1) */
+.card--inverted {
+  background: #F2E3CF;
+}
+
+/* Sobre o bege, o link vermelho clareia demais — vai a espresso
+   (o hover com foto continua clareando para blush, regra de maior
+   especificidade em .card--service:hover abaixo) */
+.section--deep .card .text-link {
+  color: var(--color-deep-espresso);
+}
+
+/* ---------- Service Card — foto do tratamento revelada no hover ---------- */
+
+.card--service {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__media {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--duration-med) var(--ease-out-soft);
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 900ms var(--ease-out-soft);
+}
+
+.card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(46, 14, 16, 0.44) 0%,
+    rgba(46, 14, 16, 0.30) 42%,
+    rgba(46, 14, 16, 0.70) 100%);
+}
+
+.card__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-14);
+  flex: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card--service:hover .card__media,
+  .card--service:focus-within .card__media {
+    opacity: 1;
+  }
+
+  .card--service:hover .card__media img,
+  .card--service:focus-within .card__media img {
+    transform: scale(1);
+  }
+
+  .card--service .card__body h3,
+  .card--service .card__body p,
+  .card--service .card__icon,
+  .card--service .card__body .text-link {
+    transition: color var(--duration-med) var(--ease-out-soft);
+  }
+
+  .card--service:hover .card__body h3,
+  .card--service:hover .card__body p,
+  .card--service:focus-within .card__body h3,
+  .card--service:focus-within .card__body p {
+    color: var(--color-lotus-white);
+  }
+
+  .card--service:hover .card__icon,
+  .card--service:focus-within .card__icon {
+    color: var(--color-lotus-blush);
+  }
+
+  .card--service:hover .card__body .text-link,
+  .card--service:focus-within .card__body .text-link {
+    color: var(--color-lotus-blush);
+  }
+}
+
+/* Touch: sem hover — a foto vira header estático do card */
+@media (hover: none), (pointer: coarse) {
+  .card__media {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    aspect-ratio: 16 / 10;
+    margin: calc(-1 * var(--card-padding)) calc(-1 * var(--card-padding)) var(--spacing-8);
+    border-radius: calc(var(--radius-cards) - 12px);
+    overflow: hidden;
+  }
+
+  .card__media img {
+    transform: none;
+  }
+
+  .card__media::after {
+    display: none;
+  }
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-lotus-red);
+  margin-bottom: var(--spacing-8);
+}
+
+.card__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+}
+
+.card h3 {
+  font-family: var(--font-playfair);
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-heading-sm);
+  color: var(--color-deep-espresso);
+}
+
+.card p {
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body-sm);
+  flex: 1;
+}
+
+.card .text-link {
+  font-size: var(--text-body-sm);
+  margin-top: var(--spacing-8);
+  align-self: flex-start;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-header);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background-color var(--duration-fast) var(--ease-out-soft),
+              box-shadow var(--duration-fast) var(--ease-out-soft),
+              backdrop-filter var(--duration-fast) var(--ease-out-soft);
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 248, 245, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-24);
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.site-header__brand {
+  font-family: var(--font-alex-brush);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-deep-espresso);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  transition: color var(--duration-fast) var(--ease-out-soft);
+}
+
+.site-header__brand img {
+  width: 34px;
+  height: auto;
+}
+
+/* Botão menu (hamburger → X) */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  padding: 10px 20px;
+  border-radius: var(--radius-nav-pill);
+  border: 1px solid transparent;
+  background: var(--surface-blush);
+  font-family: var(--font-poppins);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-deep-espresso);
+  transition: background-color var(--duration-fast) var(--ease-out-soft),
+              border-color var(--duration-fast) var(--ease-out-soft),
+              color var(--duration-fast) var(--ease-out-soft);
+  position: relative;
+  z-index: calc(var(--z-menu) + 1);
+}
+
+.menu-toggle:hover {
+  background: #f8dfe3;
+}
+
+/* Sobre a hero escura (topo da página, header ainda transparente):
+   marca e toggle saem em claro; ao rolar, volta o padrão escuro/blur. */
+.site-header:not(.is-scrolled) .site-header__brand {
+  color: var(--color-lotus-white);
+}
+
+.site-header:not(.is-scrolled) .site-header__brand:hover {
+  color: var(--color-lotus-pink);
+}
+
+.site-header:not(.is-scrolled) .menu-toggle {
+  background: transparent;
+  border-color: rgba(254, 248, 245, 0.30);
+  color: var(--color-lotus-white);
+}
+
+.site-header:not(.is-scrolled) .menu-toggle:hover {
+  background: rgba(254, 248, 245, 0.07);
+  border-color: rgba(254, 248, 245, 0.75);
+}
+
+.site-header:not(.is-scrolled) .menu-toggle__lines span {
+  background: var(--color-lotus-white);
+}
+
+/* Com o menu overlay aberto, o header sobe acima do overlay (senão o
+   contexto de empilhamento do header esconde o toggle), perde o fundo
+   e tudo volta ao escuro para ler sobre o blush. */
+body:has(.menu-overlay.is-open) .site-header {
+  z-index: calc(var(--z-menu) + 1);
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body:has(.menu-overlay.is-open) .site-header__brand {
+  color: var(--color-deep-espresso);
+}
+
+body:has(.menu-overlay.is-open) .site-header:not(.is-scrolled) .menu-toggle {
+  background: var(--surface-blush);
+  border-color: transparent;
+  color: var(--color-deep-espresso);
+}
+
+body:has(.menu-overlay.is-open) .site-header:not(.is-scrolled) .menu-toggle__lines span {
+  background: var(--color-deep-espresso);
+}
+
+.menu-toggle__lines {
+  position: relative;
+  width: 22px;
+  height: 12px;
+  flex: none;
+}
+
+.menu-toggle__lines span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-deep-espresso);
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-out-soft),
+              top var(--duration-fast) var(--ease-out-soft),
+              width var(--duration-fast) var(--ease-out-soft);
+}
+
+.menu-toggle__lines span:nth-child(1) { top: 0; }
+.menu-toggle__lines span:nth-child(2) { top: 10px; width: 70%; }
+
+.menu-toggle.is-open .menu-toggle__lines span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.is-open .menu-toggle__lines span:nth-child(2) {
+  top: 5px;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+/* ---------- Menu overlay ---------- */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  background: var(--surface-blush);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-overlay.is-open {
+  pointer-events: auto;
+}
+
+.menu-overlay__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.menu-overlay__link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--spacing-20);
+  font-family: var(--font-playfair);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-heading-lg);
+  color: var(--color-deep-espresso);
+  transition: color var(--duration-fast) var(--ease-out-soft);
+  width: fit-content;
+}
+
+.menu-overlay__link:hover {
+  color: var(--color-lotus-red);
+}
+
+.menu-overlay__link .menu-overlay__index {
+  font-family: var(--font-poppins);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-lotus-pink);
+}
+
+.menu-overlay__footer {
+  margin-top: var(--spacing-56);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-24) var(--spacing-40);
+  font-size: var(--text-body-sm);
+}
+
+.menu-overlay__footer a {
+  color: var(--color-deep-espresso);
+}
+
+.menu-overlay__footer a:hover {
+  color: var(--color-lotus-red);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.menu-overlay__footer .menu-overlay__label {
+  display: block;
+  font-family: var(--font-poppins);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-lotus-red);
+  margin-bottom: var(--spacing-8);
+}
+
+/* ---------- Cursor customizado ---------- */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  translate: -50% -50%;
+}
+
+/* Ponto central removido: uma única camada com mix-blend-mode: difference —
+   inverte qualquer fundo, claro ou escuro. */
+.cursor-dot {
+  display: none;
+}
+
+/* Ponto preenchido, pequeno e tímido: discreto no repouso, cresce pouco
+   sobre interativos — presença quieta, nunca um alvo na tela. */
+.cursor-ring {
+  width: 10px;
+  height: 10px;
+  background: var(--color-lotus-white);
+  mix-blend-mode: difference;
+  scale: 1;
+  transition: scale var(--duration-fast) var(--ease-out-soft),
+              opacity var(--duration-fast) var(--ease-out-soft);
+}
+
+.cursor-ring.is-active {
+  scale: 2.2;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* ---------- Noise overlay ---------- */
+/* Grain VHS sobre o site todo: textura mais presente que um véu sutil,
+   com crawl em saltos (steps) — a mesma lógica de camadas da hero. */
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  animation: noiseCrawl 0.9s steps(6) infinite;
+}
+
+@keyframes noiseCrawl {
+  0% { background-position: 0 0; }
+  100% { background-position: 132px 84px; }
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Mariah Oliveira · Biomédica Esteta em Marília-SP</title>
+  <meta name="description" content="Dra. Mariah Oliveira, Biomédica Esteta (CRBM 69057) em Marília-SP. Especialista em remodelação corporal, drenagem linfática, pós-operatório e flacidez. +20 anos de experiência.">
+  <meta name="theme-color" content="#FFF8F5">
+  <meta property="og:title" content="Dra. Mariah Oliveira · Biomédica Esteta">
+  <meta property="og:description" content="Especialista em remodelação corporal, drenagem linfática, pós-operatório e flacidez. +20 anos de experiência em Marília-SP.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero-1600.webp">
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
+
+  <link rel="preload" href="fonts/PlayfairDisplay-Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/AlexBrush-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/motion.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!--
+    DIRECTION CONTRACT — Dra. Mariah Oliveira landing (v2)
+    THESIS: um editorial quente onde a tipografia é protagonista e a flor de lótus da marca abre a experiência; recusa o template "clínica estética" de cards frios e grid simétrico de ícones.
+    OWN-WORLD: warm lotus editorial — canvas Lotus White #FFF8F5, superfícies Lotus Blush #FCEDEE, ação única Lotus Red #E33D4B, conversão Sage Green #4CAF7A, tinta Deep Espresso #3E2723; quarteto Playfair/Lato/Poppins/Alex Brush; pill buttons, cards blush sem borda, sombras quentes.
+    STORY: a visitante entende em segundos que Mariah é biomédica esteta com +20 anos, sente acolhimento (não clínica fria) e agenda pelo WhatsApp.
+    FIRST VIEWPORT: headline editorial full-width com palavra em Alex Brush; abaixo, split assimétrico — conteúdo à esquerda com stat tipográfico (sem card), imagem em arco à direita subindo por cima da headline (overlap negativo), assinatura "com carinho," em diagonal no canto da imagem.
+    FORM: superfície dentro de mundo estabelecido — direção pinada pelo brief (Design.md + infos.md + referências simonholm.studio / off.site / jam.dev); nenhum roll de conceito, por contrato do próprio brief.
+    V2: hero sem badge-card (stat virou tipografia com hairline); cards de serviço revelam foto do tratamento no hover; manifesto virou seção escura, penúltima antes do CTA.
+    V3: fundos viram blocos de cor sólida, sem gradientes entre seções (mínimo de cor: Serviços em rosa, Filosofia em night); Filosofia é manifesto editorial à esquerda com highlight no scroll; CTA de Serviços vira pill branco e o verde Sage fica exclusivo do Contato, sobre fundo claro; o gradient shader sutil do Contato (CTA final) é mantido como único movimento de fundo do site.
+    V4: hero substituída pela referência exportada (hero section/): fundo escuro #07101A com shader WebGL2 "prismatic drift" (#07101A/#E33D4B/#FEF8F5, duotone + scanlines + grain), véu radial, título Playfair até 120px com reveal por palavra após a intro, pill branca "Agendar avaliação" e a lótus marca d'água fixa (desabrocha e balança ao vento). Header fica transparente e claro sobre a hero, voltando ao pill branco com blur ao rolar.
+    V5: as seções passam a contar a progressão cromática das camadas da logo (extremidades escuras clareando) — hero escura #07101A → Serviços → Localização → Filosofia → CTA final em campo claro ultra-borrado em deriva lenta (estilo off.site, com dithering anti-banding). Cursor vira ponto preenchido de 10px em difference — menor e mais tímido. Copy visível sem travessões.
+    V6: camadas em registro pastel (Serviços #DD8285, Localização #ECAEB1, Filosofia #F5D7D8 — tints das camadas da logo, texto sempre espresso); grain VHS global mais forte (0.14, crawl em steps); cards de serviço em bege #F2E3CF com links espresso e CTA em branco puro; mapa quadrado de cantos generosos (arco banido como AI slop) e "Como chegar" promovido a botão primário; scroll-highlight da Filosofia restaurado fiel ao originkit (cor dim→highlight, stagger 0.1, top/bottom center); delight no CTA final: a lótus desabrocha ao entrar na viewport; footer ganha ícones sociais e crédito @cesargiao. Design.md é documento de identidade: congelado, nunca mais sincronizar com implementação.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+  -->
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cursor customizado -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Grain -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Intro — entrada do site -->
+  <div class="intro" id="intro" role="dialog" aria-label="Introdução" aria-hidden="true">
+    <div class="intro__lotus" data-lotus>
+      <img class="lotus__layer" src="assets/logo/layer-1.png" alt="" data-depth="outer-right">
+      <img class="lotus__layer" src="assets/logo/layer-2.png" alt="" data-depth="mid-right">
+      <img class="lotus__layer" src="assets/logo/layer-3.png" alt="" data-depth="center">
+      <img class="lotus__layer" src="assets/logo/layer-4.png" alt="" data-depth="mid-left">
+      <img class="lotus__layer" src="assets/logo/layer-5.png" alt="" data-depth="outer-left">
+    </div>
+    <p class="intro__name">Dra. Mariah Oliveira</p>
+    <p class="intro__role">Biomédica Esteta · CRBM 69057</p>
+    <button class="intro__skip" type="button" data-intro-skip>Pular introdução</button>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="#inicio" data-cursor>
+        <img src="assets/logo/logo.png" alt="" width="34" height="20">
+        Mariah Oliveira
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" data-menu-toggle data-cursor>
+        <span class="menu-toggle__label">Menu</span>
+        <span class="menu-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu overlay -->
+  <nav class="menu-overlay" id="menu-overlay" aria-label="Navegação principal">
+    <div class="container">
+      <ul class="menu-overlay__nav">
+        <li><a class="menu-overlay__link" href="#inicio" data-menu-link data-cursor><span class="menu-overlay__index">01</span>Início</a></li>
+        <li><a class="menu-overlay__link" href="#servicos" data-menu-link data-cursor><span class="menu-overlay__index">02</span>Serviços</a></li>
+        <li><a class="menu-overlay__link" href="#localizacao" data-menu-link data-cursor><span class="menu-overlay__index">03</span>Localização</a></li>
+        <li><a class="menu-overlay__link" href="#filosofia" data-menu-link data-cursor><span class="menu-overlay__index">04</span>Filosofia</a></li>
+        <li><a class="menu-overlay__link" href="#contato" data-menu-link data-cursor><span class="menu-overlay__index">05</span>Contato</a></li>
+      </ul>
+      <div class="menu-overlay__footer">
+        <div>
+          <span class="menu-overlay__label">Agendamentos</span>
+          <a href="https://wa.me/5514997627401" target="_blank" rel="noopener" data-cursor>(14) 99762-7401</a>
+        </div>
+        <div>
+          <span class="menu-overlay__label">Redes</span>
+          <a href="https://www.instagram.com/mariaholiveiraestetica/" target="_blank" rel="noopener" data-cursor>Instagram</a>
+          <a href="https://web.facebook.com/MariahOliveiraEsteticista/" target="_blank" rel="noopener" data-cursor>Facebook</a>
+        </div>
+        <div>
+          <span class="menu-overlay__label">Endereço</span>
+          <p>Rua Doutor Augusto Barreto, 380<br>Jd. Maria Izabel · Marília-SP</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Lótus marca d'água — desabrocha na entrada e depois balança ao vento -->
+  <div class="lotus-mark" id="lotusMark" aria-hidden="true">
+    <img src="assets/logo/layer-5.png" data-petal="5" alt="">
+    <img src="assets/logo/layer-1.png" data-petal="1" alt="">
+    <img src="assets/logo/layer-4.png" data-petal="4" alt="">
+    <img src="assets/logo/layer-2.png" data-petal="2" alt="">
+    <img src="assets/logo/layer-3.png" data-petal="3" alt="">
+  </div>
+
+  <main id="conteudo">
+
+    <!-- Hero — prismatic drift (shader WebGL2) + lótus marca d'água -->
+    <section class="hero" id="inicio" aria-label="Introdução">
+      <div class="hero__bg" id="hero-bg" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Biomédica Esteta</p>
+        <h1 class="hero__title" aria-label="Seu corpo merece cuidado de verdade.">
+          <span class="w"><span style="--d:1.35s">Seu</span></span>
+          <span class="w"><span style="--d:1.43s">corpo</span></span><br>
+          <span class="w"><span style="--d:1.55s">merece</span></span>
+          <span class="w"><span style="--d:1.63s">cuidado</span></span>
+          <span class="w"><span style="--d:1.71s">de</span></span>
+          <span class="w"><span style="--d:1.79s">verdade.</span></span>
+        </h1>
+        <p class="hero__sub">
+          Sou <strong>Mariah Oliveira</strong>, biomédica esteta. Há mais de vinte
+          anos trabalho com drenagem linfática, recuperação pós-operatória e
+          flacidez, sempre com técnica, calma e atenção ao que o seu corpo
+          pede naquele dia.
+        </p>
+        <a class="hero__cta" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" data-cursor>Agendar avaliação</a>
+      </div>
+    </section>
+
+    <!-- Serviços — primeira camada da logo em pastel: #DD8285 -->
+    <section class="section section--deep" id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-reveal>Serviços</span>
+          <h2 data-reveal>Cuidado especializado para cada momento do seu corpo</h2>
+          <p data-reveal>
+            Protocolos personalizados de massagem e estética corporal, conduzidos com
+            técnica, escuta e mais de duas décadas de experiência clínica.
+          </p>
+        </div>
+
+        <div class="grid-services" data-reveal-group>
+          <article class="card card--inverted card--service" data-reveal>
+            <figure class="card__media" aria-hidden="true">
+              <img
+                src="assets/img/servico-remodelacao-800.webp"
+                srcset="assets/img/servico-remodelacao-800.webp 800w, assets/img/servico-remodelacao-1600.webp 1600w"
+                sizes="(max-width: 767px) 100vw, 560px"
+                alt="" loading="lazy" decoding="async">
+            </figure>
+            <div class="card__body">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6c4 4 6 8 6 12a6 6 0 1 1-12 0c0-4 2-8 6-12z"/><path d="M8 26c3 1 5 3 6 6M32 26c-3 1-5 3-6 6M20 26v8"/></svg>
+              </span>
+              <h3>Remodelação corporal</h3>
+              <p>Protocolos que combinam massagem modeladora e tecnologias estéticas para redefinir contornos com naturalidade e segurança.</p>
+              <a class="text-link" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20remodela%C3%A7%C3%A3o%20corporal." target="_blank" rel="noopener" data-cursor>Saiba mais <span class="text-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card card--inverted card--service" data-reveal>
+            <figure class="card__media" aria-hidden="true">
+              <img
+                src="assets/img/servico-drenagem-800.webp"
+                srcset="assets/img/servico-drenagem-800.webp 800w, assets/img/servico-drenagem-1600.webp 1600w"
+                sizes="(max-width: 767px) 100vw, 560px"
+                alt="" loading="lazy" decoding="async">
+            </figure>
+            <div class="card__body">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8c3.5 4.5 6 8 6 11.5a6 6 0 1 1-12 0C14 16 16.5 12.5 20 8z"/><path d="M12 30c2.5 2 5.5 3 8 3s5.5-1 8-3"/></svg>
+              </span>
+              <h3>Drenagem linfática</h3>
+              <p>Técnica suave e ritmada que estimula o sistema linfático, reduzindo inchaço e promovendo leveza e bem-estar imediatos.</p>
+              <a class="text-link" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20drenagem%20linf%C3%A1tica." target="_blank" rel="noopener" data-cursor>Saiba mais <span class="text-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card card--inverted card--service" data-reveal>
+            <figure class="card__media" aria-hidden="true">
+              <img
+                src="assets/img/servico-pos-operatorio-800.webp"
+                srcset="assets/img/servico-pos-operatorio-800.webp 800w, assets/img/servico-pos-operatorio-1600.webp 1600w"
+                sizes="(max-width: 767px) 100vw, 560px"
+                alt="" loading="lazy" decoding="async">
+            </figure>
+            <div class="card__body">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 33s-11-6.5-11-14a6 6 0 0 1 11-3.5A6 6 0 0 1 31 19c0 7.5-11 14-11 14z"/><path d="M20 15v8M16 19h8"/></svg>
+              </span>
+              <h3>Pós-operatório</h3>
+              <p>Acompanhamento cuidadoso no pós-cirúrgico, acelerando a recuperação, reduzindo fibroses e devolvendo conforto ao corpo.</p>
+              <a class="text-link" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20p%C3%B3s-operat%C3%B3rio." target="_blank" rel="noopener" data-cursor>Saiba mais <span class="text-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card card--inverted card--service" data-reveal>
+            <figure class="card__media" aria-hidden="true">
+              <img
+                src="assets/img/servico-flacidez-800.webp"
+                srcset="assets/img/servico-flacidez-800.webp 800w, assets/img/servico-flacidez-1600.webp 1600w"
+                sizes="(max-width: 767px) 100vw, 560px"
+                alt="" loading="lazy" decoding="async">
+            </figure>
+            <div class="card__body">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5l2.5 7.5L30 15l-7.5 2.5L20 25l-2.5-7.5L10 15l7.5-2.5L20 5z"/><path d="M30 26l1.2 3.3L34.5 30.5l-3.3 1.2L30 35l-1.2-3.3-3.3-1.2 3.3-1.2L30 26z"/></svg>
+              </span>
+              <h3>Flacidez</h3>
+              <p>Tratamentos que estimulam colágeno e firmeza da pele, devolvendo tônus e viço com resultados progressivos e duradouros.</p>
+              <a class="text-link" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20tratamento%20de%20flacidez." target="_blank" rel="noopener" data-cursor>Saiba mais <span class="text-link__arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="services__cta" data-reveal>
+          <p>
+            Cada atendimento começa com uma avaliação individual. Conte o seu momento
+            e receba o protocolo ideal para você.
+          </p>
+          <a class="btn btn--light" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" data-cursor>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+            Agendar avaliação pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localização — segunda camada da logo em pastel (#ECAEB1), editorial + mapa quadrado -->
+    <section class="section section--red location" id="localizacao">
+      <div class="container">
+        <div class="location__grid">
+          <div class="location__content">
+            <span class="eyebrow" data-reveal>Localização</span>
+            <h2 data-reveal>Um espaço acolhedor no coração de Marília</h2>
+            <address class="location__address" data-reveal>
+              Rua Doutor Augusto Barreto, 380<br>
+              Jd. Maria Izabel · Marília-SP
+            </address>
+            <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=Rua+Doutor+Augusto+Barreto+380+Mar%C3%ADlia+SP" target="_blank" rel="noopener" data-cursor data-reveal>
+              Como chegar
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <ul class="location__hours" data-reveal>
+              <li><span>Segunda a sexta</span><span>08h às 18h</span></li>
+              <li><span>Sábado</span><span>08h às 14h</span></li>
+            </ul>
+            <span class="badge badge--light" data-reveal>Atendimento com hora marcada</span>
+          </div>
+          <div class="location__media" data-reveal>
+            <iframe
+              title="Mapa: Rua Doutor Augusto Barreto, 380, Marília-SP"
+              src="https://www.google.com/maps?q=Rua%20Doutor%20Augusto%20Barreto%20380%2C%20Mar%C3%ADlia%20SP&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filosofia — scroll text highlight (originkit) sobre rosa pálido #F5D7D8 -->
+    <section class="section manifesto" id="filosofia" aria-label="Filosofia">
+      <div class="container">
+        <span class="eyebrow" data-reveal>Filosofia</span>
+        <p class="manifesto__text" data-scroll-highlight>
+          Todo corpo carrega uma história. Escutá-la é o meu ofício há mais de
+          vinte anos. Devolver forma, leveza e confiança é o meu trabalho.
+          <span class="script-accent script-accent--night">Florescer</span> é o seu tempo.
+        </p>
+        <p class="manifesto__signature" data-reveal>
+          <strong>Dra. Mariah Oliveira</strong>
+          Biomédica Esteta · CRBM 69057
+        </p>
+      </div>
+    </section>
+
+    <!-- Contato — campo ultra-borrado em deriva lenta (estilo off.site, registro claro) -->
+    <section class="section contact" id="contato">
+      <canvas class="contact__shader" data-shader-gradient aria-hidden="true"></canvas>
+      <div class="container contact__inner">
+        <!-- Delight: a lótus desabrocha quando o convite entra na viewport -->
+        <div class="contact__lotus" aria-hidden="true">
+          <img src="assets/logo/layer-5.png" data-petal="5" alt="">
+          <img src="assets/logo/layer-1.png" data-petal="1" alt="">
+          <img src="assets/logo/layer-4.png" data-petal="4" alt="">
+          <img src="assets/logo/layer-2.png" data-petal="2" alt="">
+          <img src="assets/logo/layer-3.png" data-petal="3" alt="">
+        </div>
+        <span class="eyebrow" data-reveal>Contato</span>
+        <h2 data-reveal>Pronta para começar o seu cuidado?</h2>
+        <p data-reveal>
+          Agende sua avaliação pelo WhatsApp e dê o primeiro passo para se sentir
+          bem no próprio corpo, com técnica, escuta e acolhimento.
+        </p>
+        <div class="contact__actions" data-reveal>
+          <a class="btn btn--conversion" href="https://wa.me/5514997627401?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" data-cursor>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="text-link" href="https://www.instagram.com/mariaholiveiraestetica/" target="_blank" rel="noopener" data-cursor>Seguir no Instagram <span class="text-link__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <p class="site-footer__brand">Dra. Mariah Oliveira</p>
+            <p style="font-size: var(--text-body-sm);">Biomédica Esteta especialista em remodelação corporal, drenagem linfática, pós-operatório e flacidez.</p>
+          </div>
+          <div class="site-footer__col">
+            <span class="eyebrow">Horários</span>
+            <p>Seg–Sex · 08h às 18h</p>
+            <p>Sábado · 08h às 14h</p>
+          </div>
+          <div class="site-footer__col">
+            <span class="eyebrow">Endereço</span>
+            <p>Rua Doutor Augusto Barreto, 380<br>Jd. Maria Izabel<br>Marília-SP</p>
+          </div>
+          <div class="site-footer__col">
+            <span class="eyebrow">Contato</span>
+            <ul>
+              <li><a href="https://wa.me/5514997627401" target="_blank" rel="noopener" data-cursor><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>WhatsApp · (14) 99762-7401</a></li>
+              <li><a href="https://www.instagram.com/mariaholiveiraestetica/" target="_blank" rel="noopener" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>Instagram</a></li>
+              <li><a href="https://web.facebook.com/MariahOliveiraEsteticista/" target="_blank" rel="noopener" data-cursor><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5h2.8V5H14A4.5 4.5 0 0 0 9.5 9.5v2H7v3.4h2.5V21h3.4v-6.1h2.8l.5-3.4h-3.3V9.5a1.1 1.1 0 0 1 1.1-1z"/></svg>Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__fine">
+          <span>Dra. Mariah Oliveira · Biomédica Esteta · CRBM 69057</span>
+          <span>© <span id="footer-year">2026</span> · Marília-SP</span>
+          <span>Site desenvolvido por <a href="https://cesargiao.dev" target="_blank" rel="noopener" data-cursor>@cesargiao</a></span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Vendor -->
+  <script defer src="js/vendor/gsap.min.js"></script>
+  <script defer src="js/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="js/vendor/lenis.min.js"></script>
+
+  <!-- Módulos -->
+  <script defer src="js/modules/smooth-scroll.js"></script>
+  <script defer src="js/modules/lotus-bloom.js"></script>
+  <script defer src="js/modules/intro.js"></script>
+  <script defer src="js/modules/menu.js"></script>
+  <script defer src="js/modules/reveal.js"></script>
+  <script defer src="js/modules/scroll-highlight.js"></script>
+  <script defer src="js/modules/cursor.js"></script>
+  <script defer src="js/modules/hero-shader.js"></script>
+  <script defer src="js/modules/shader-gradient.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>

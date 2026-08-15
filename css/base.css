@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Base — reset, fontes, tipografia global
+   ========================================================================== */
+
+/* ---------- @font-face ---------- */
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/poppins.medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alex Brush';
+  src: url('../fonts/AlexBrush-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  font-family: var(--font-lato);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-deep-espresso);
+  background-color: var(--surface-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-lotus-red);
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--color-lotus-pink);
+  color: var(--color-lotus-white);
+}
+
+/* ---------- Foco acessível ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-lotus-red);
+  outline-offset: 3px;
+  border-radius: var(--radius-small);
+}
+
+/* ---------- Tipografia utilitária ---------- */
+
+.eyebrow {
+  font-family: var(--font-poppins);
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-lotus-red);
+}
+
+.script-accent {
+  font-family: var(--font-alex-brush);
+  font-weight: 400;
+  font-size: 1.18em;
+  line-height: var(--leading-script);
+  letter-spacing: 0;
+  color: var(--color-lotus-red);
+  white-space: nowrap;
+}
+
+.script-accent--pink {
+  color: var(--color-lotus-pink);
+}
+
+/* Sobre o rosa da Filosofia: o acento vai a vinho night — branco falharia contraste */
+.script-accent--night {
+  color: var(--color-lotus-night);
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: calc(var(--z-intro) + 1);
+  padding: 10px 20px;
+  background: var(--color-deep-espresso);
+  color: var(--color-lotus-white);
+  border-radius: var(--radius-full);
+  font-family: var(--font-poppins);
+  font-size: var(--text-body-sm);
+  transition: top var(--duration-fast) var(--ease-out-soft);
+}
+
+.skip-link:focus-visible {
+  top: 16px;
+}
