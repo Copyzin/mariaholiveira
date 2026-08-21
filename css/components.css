@@ -126,12 +126,6 @@
   color: var(--color-deep-espresso);
 }
 
-/* Sobre fundos vermelhos (Localização): pill branco cheio, texto espresso */
-.badge--light {
-  background: var(--color-lotus-white);
-  color: var(--color-deep-espresso);
-}
-
 /* ---------- Feature Card ---------- */
 
 .card {
@@ -528,6 +522,27 @@ body:has(.menu-overlay.is-open) .site-header:not(.is-scrolled) .menu-toggle__lin
   text-transform: uppercase;
   color: var(--color-lotus-red);
   margin-bottom: var(--spacing-8);
+}
+
+/* Redes em lista vertical, cada uma com o ícone preenchido da marca —
+   mesmos glifos e peso do footer para coerência */
+.menu-overlay__socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.menu-overlay__socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  width: fit-content;
+}
+
+.menu-overlay__socials a svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
 }
 
 /* ---------- Cursor customizado ---------- */

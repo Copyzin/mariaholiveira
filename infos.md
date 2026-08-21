@@ -14,7 +14,7 @@ Drenagem linfática • Pós-operatório • Flacidez
 
 facebook: https://web.facebook.com/MariahOliveiraEsteticista/?_rdc=1&_rdr#
 instagram: https://www.instagram.com/mariaholiveiraestetica/
-whatsapp 14 99762-7401
+whatsapp 14 99632-4412
 
 Horário:
 Seg-Sex: das 08h às 18h

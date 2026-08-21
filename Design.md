@@ -127,7 +127,7 @@ Viewport inteiro (min-height 100svh) em fundo escuro #07101A gerado por shader W
 Background #E33D4B (hover: #E0000A), texto #FFF8F5, Poppins 14px weight 500, border-radius 9999px (pill completo), padding 14px 28px, sem borda. Se presente, é o único botão preenchido vermelho na viewport — nunca dois lado a lado.
 
 ### Conversion Green Pill Button
-**Role:** Botão de conversão — agendamento / WhatsApp (14 99762-7401)
+**Role:** Botão de conversão — agendamento / WhatsApp (14 99632-4412)
 
 Background #4CAF7A, texto #FFF8F5, Poppins 14px weight 500, border-radius 9999px, padding 14px 28px, com ícone de WhatsApp quando aplicável. Sage Green é reservado a este papel: nunca usar em headings, links de texto ou decoração.
 
